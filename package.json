@@ -1,0 +1,24 @@
+{
+  "name": "jpeg-web-worker",
+  "version": "1.0.0",
+  "description": "Generate a jpeg using a web worker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kentmw/jpeg-web-worker.git"
+  },
+  "keywords": [
+    "jpeg",
+    "web-worker",
+    "worker"
+  ],
+  "author": "Kent Willis <kentmw@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kentmw/jpeg-web-worker/issues"
+  },
+  "homepage": "https://github.com/kentmw/jpeg-web-worker#readme"
+}
