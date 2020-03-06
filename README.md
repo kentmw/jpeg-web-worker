@@ -67,9 +67,24 @@ worker.onmessage = function(e) {
 }
 ```
 
+**PNG Support**
+```
+worker.postMessage({
+  image: imageData,
+  png: true,
+  quality: 50
+});
+worker.onmessage = function(e) {
+  // Make sure to specify the type as png.
+  var blob = new Blob( [e.data.data], {type: 'image/png'} );
+}
+```
+
 ## Credits
 
 This library relies almost entirely on an adaptation of the encoder from the [jpeg-js]() library. This library was built to work in a node.js environment and not in the browser, let alone in a web worker environment.
+
+The png part of this library is pulled directly from https://github.com/photopea/UPNG.js
 
 
 ## License
