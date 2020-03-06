@@ -1,5 +1,5 @@
 # jpeg-web-worker
-Generate a jpeg using a web worker
+Generate a jpeg (or png) using a web worker
 
 ## Motivation
 The browser can generate a jpeg for you from an HTML canvas:
