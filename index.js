@@ -1,6 +1,6 @@
 this.onmessage = function(e) {
   if (e.data.png) {
-    this.postMessage(UPNG.encode([e.data.image.data], e.image.width, e.image.height, 0));
+    this.postMessage(UPNG.encode([e.data.image.data], e.data.image.width, e.data.image.height, 0));
   } else {
     this.postMessage(encode(e.data.image, e.data.quality));
   }
