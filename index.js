@@ -1217,7 +1217,7 @@ UPNG.encode._filterZero = function(img,h,bpp,bpl,data, filter, levelZero)
 }
 UPNG.encode._filterLine = function(data, img, y, bpl, bpp, type)
 {
-  var i = y*bpl, di = i+y, paeth = UPNG.decode._paeth
+  var i = y*bpl, di = i+y, paeth = UPNG._paeth
   data[di]=type;  di++;
 
   if(type==0) {
@@ -1242,6 +1242,14 @@ UPNG.encode._filterLine = function(data, img, y, bpl, bpp, type)
     if(type==4) { for(var x=  0; x<bpp; x++) data[di+x] = (img[i+x]+256 - paeth(0, img[i+x-bpl], 0))&255;
             for(var x=bpp; x<bpl; x++) data[di+x] = (img[i+x]+256 - paeth(img[i+x-bpp], img[i+x-bpl], img[i+x-bpp-bpl]))&255;  }
   }
+}
+
+UPNG._paeth = function(a,b,c)
+{
+  var p = a+b-c, pa = (p-a), pb = (p-b), pc = (p-c);
+  if (pa*pa <= pb*pb && pa*pa <= pc*pc)  return a;
+  else if (pb*pb <= pc*pc)  return b;
+  return c;
 }
 
 UPNG.crc = {
